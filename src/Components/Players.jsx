@@ -10,23 +10,29 @@ const Players = (props) => {
 		playerData = props.playerData.map((player, i) => {
 			if (player.eliminated) {
 				return (
-					<a className="item" style={{ textDecoration: 'line-through' }}>
-						<span className={player.color}>{player.name}</span>
-					</a>
+					<div class="ui medium header">
+						<a className="item" style={{ textDecoration: 'line-through' }}>
+							<span className={player.color}>{player.name}</span>
+						</a>
+					</div>
 				);
 			} else if (i === props.activePlayer) {
 				return (
-					<a className="item">
-						<span className={player.color}>
-							<b>{player.name}</b>
-						</span>
-					</a>
+					<div class="ui medium header">
+						<a className="item">
+							<span className={player.color}>
+								<b>{player.name}</b>
+							</span>
+						</a>
+					</div>
 				);
 			} else {
 				return (
-					<a className="item">
-						<span className={player.color}>{player.name}</span>
-					</a>
+					<div class="ui medium header">
+						<a className="item">
+							<span className={player.color}>{player.name}</span>
+						</a>
+					</div>
 				);
 			}
 		});
@@ -34,12 +40,18 @@ const Players = (props) => {
 
 	return (
 		<div className="ui vertical text menu">
-			<div className="header item">Players Online</div>
+			<div class="ui large header">Your num : {props.userNumber || ''}</div>
+			<br />
+			<div className="ui large header">Players Online :</div>
 			{playerData}
 		</div>
 	);
 };
 const mapStateToProps = (state) => {
-	return { playerData: state.playerData, activePlayer: state.activePlayer };
+	return {
+		playerData: state.playerData,
+		activePlayer: state.activePlayer,
+		userNumber: state.userNumber,
+	};
 };
 export default connect(mapStateToProps)(Players);
