@@ -11,7 +11,7 @@ import {
 } from '../Actions';
 import '../CSS/Grid.css';
 
-const socket = io('ws://number-game-ws.herokuapp.com', {
+const socket = io('https://number-game-ws.herokuapp.com', {
 	extraHeaders: {
 		'Content-Type': 'application/json',
 		'Access-Control-Allow-Origin': 'https://number-game-react.herokuapp.com/',
