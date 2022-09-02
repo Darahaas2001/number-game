@@ -20,7 +20,10 @@ const Players = (props) => {
 				return (
 					<div class="ui medium header">
 						<a className="item">
-							<span className={player.color}>
+							<span
+								className={player.color}
+								style={{ textDecoration: 'underline' }}
+							>
 								<b>{player.name}</b>
 							</span>
 						</a>
