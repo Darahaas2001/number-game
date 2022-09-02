@@ -14,7 +14,6 @@ import '../CSS/Grid.css';
 const socket = io('https://number-game-ws.herokuapp.com', {
 	withCredentials: true,
 	extraHeaders: {
-		'Content-Type': 'application/json',
 		'Access-Control-Allow-Origin': 'https://number-game-react.herokuapp.com',
 	},
 });
