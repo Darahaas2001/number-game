@@ -3,3 +3,35 @@
 	margin-top: 150px;
 	display: inherit;
 }
+
+.red {
+	color: #ff5144;
+}
+
+.orange {
+	color: #ff7701;
+}
+.yellow {
+	color: #ffdf05;
+}
+
+.olive {
+	color: #d8ea5c;
+}
+
+.green {
+	color: #22be34;
+}
+
+.teal {
+	color: #54ffff;
+}
+.blue {
+	color: #3ac0ff;
+}
+.violet {
+	color: #8a73ff;
+}
+.purple {
+	color: #dc73ff;
+}

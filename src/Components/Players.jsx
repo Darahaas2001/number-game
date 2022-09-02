@@ -8,21 +8,26 @@ const Players = (props) => {
 	console.log(props.playerData);
 	if (props.playerData) {
 		playerData = props.playerData.map((player, i) => {
-			if (i === props.activePlayer) {
-				return (
-					<a className="item">
-						<b>{player.name}</b>
-					</a>
-				);
-			}
 			if (player.eliminated) {
 				return (
 					<a className="item" style={{ textDecoration: 'line-through' }}>
-						{player.name}
+						<span className={player.color}>{player.name}</span>
+					</a>
+				);
+			} else if (i === props.activePlayer) {
+				return (
+					<a className="item">
+						<span className={player.color}>
+							<b>{player.name}</b>
+						</span>
 					</a>
 				);
 			} else {
-				return <a className="item">{player.name}</a>;
+				return (
+					<a className="item">
+						<span className={player.color}>{player.name}</span>
+					</a>
+				);
 			}
 		});
 	}

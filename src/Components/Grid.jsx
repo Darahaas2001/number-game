@@ -11,6 +11,13 @@ import {
 } from '../Actions';
 import '../CSS/Grid.css';
 
+// const socket = io('http://localhost:8000', {
+// 	withCredentials: true,
+// 	extraHeaders: {
+// 		'Access-Control-Allow-Origin': 'http://localhost:3000',
+// 	},
+// });
+
 const socket = io('https://number-game-ws.herokuapp.com', {
 	withCredentials: true,
 	extraHeaders: {
@@ -26,7 +33,6 @@ const Grid = (props) => {
 	const query = new URLSearchParams(window.location.search);
 
 	socket.on('oppoColor', (data) => {
-		console.log(data);
 		let { color, number } = JSON.parse(data);
 		document
 			.getElementById(number)
