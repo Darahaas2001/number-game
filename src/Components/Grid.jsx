@@ -11,7 +11,7 @@ import {
 } from '../Actions';
 import '../CSS/Grid.css';
 
-const socket = io('ws://localhost:8000');
+const socket = io('ws://number-game-ws.herokuapp.com');
 socket.on('error', (data) => {
 	window.alert(data);
 	window.location.href = '/';
